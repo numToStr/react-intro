@@ -1,6 +1,6 @@
 {
   "name": "react-intro",
-  "private": true,
+  "license": "MIT",
   "scripts": {
     "build": "slidev build",
     "dev": "slidev --open",
@@ -8,8 +8,6 @@
   },
   "dependencies": {
     "@slidev/cli": "^0.42.4",
-    "@slidev/theme-bricks": "^0.0.2",
-    "@slidev/theme-default": "latest",
-    "@slidev/theme-seriph": "latest"
+    "@slidev/theme-bricks": "^0.0.2"
   }
 }
