@@ -1,4 +1,6 @@
 ---
+titleTemplate: "%s - Vikas Rajbanshi"
+favicon: /logo.svg
 theme: bricks
 class: text-center
 highlighter: shiki
@@ -6,17 +8,10 @@ lineNumbers: true
 drawings:
   persist: false
 transition: slide-left
+hideInToc: true
 ---
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-11.5 -10.23174 23 20.46348" height="200" class="m-auto">
-    <title>React Logo</title>
-    <circle cx="0" cy="0" r="2.05" fill="#61dafb"/>
-    <g stroke="#61dafb" stroke-width="1" fill="none">
-        <ellipse rx="11" ry="4.2"/>
-        <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
-        <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
-    </g>
-</svg>
+<img alt="React Logo" src="/logo.svg" style="height:200px" class="m-auto" />
 
 # Introduction to React
 
@@ -24,19 +19,17 @@ transition: slide-left
 
 [https://react.dev](https://react.dev)
 
+<!-- prettier-ignore-start -->
+
 ---
+hideInToc: true
+---
+
+<!-- prettier-ignore-end -->
 
 # We'll be covering
 
-- What is (not) React?
-- What is a Component and JSX?
-- Passing Data Around
-- Conditional Rendering
-- Working with Lists and Events
-- Managing Local State
-- Using Context
-- Async and Side Effects
-- Ecosystem Walkthrough
+<Toc/>
 
 ---
 
@@ -81,28 +74,33 @@ export function Example() {
 
 ---
 
-# Passing data around
+# Props, Children and Fragment
 
 ##
 
 React compnents uses `props` to communicate and pass data from parent to child component. Props are defined as you would define normal HTML attribute, they can take string literals or any javascript value using curly braces `{ }`.
 
-```js
+When you nest content inside a JSX tag, the parent component will receive that content in a prop called `children` and `Fragment` (`<>...</>`) lets you group elements without a wrapper node.
+
+```js {all} {maxHeight: '250px'}
 function Parent() {
   const age = 99;
   return (
     <main>
-      <Child name="John Doe" age={age} />
+      <Child name="John Doe" age={age}>
+        Anything between tags is know as `children`
+      </Child>
     </main>
   );
 }
 
 function Child(props) {
   return (
-    <section>
+    <>
       <p>Name: {props.name}</p>
       <p>Age: {props.age}</p>
-    </section>
+      {props.children}
+    </>
   );
 }
 ```
@@ -260,6 +258,25 @@ export function App() {
 
 # Async and Side Effects
 
+##
+
+TODO:
+
 ---
 
 # Ecosystem Walkthrough
+
+##
+
+TODO:
+
+<!-- prettier-ignore-start -->
+
+---
+class: flex justify-center items-center
+hideInToc: true
+---
+
+<!-- prettier-ignore-end -->
+
+# Thank You!
