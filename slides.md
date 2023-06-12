@@ -37,7 +37,7 @@ hideInToc: true
 
 ##
 
-React is a **UI library** for making beautiful and interactive web applications.
+React is a _library_ for making beautiful and interactive UI.
 
 # What is not React?
 
@@ -140,7 +140,7 @@ function TodoItem3(props) {
 
 ##
 
-To render a similar component with different datasets, we use [javascript array methods](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array#) and most often `map()` method.
+To render a similar component with different datasets, we use [javascript array methods](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array#) and most often `map()` method. We also need to give `key` prop to make each element unique in the list.
 
 And to add event to your component, you first define a function and pass the function reference to the `onClick` props on the JSX element.
 
@@ -156,7 +156,7 @@ function TodoList() {
   return (
     <section>
       {todos.map((t) => (
-        <TodoItem {...t} />
+        <TodoItem key={t.text} {...t} />
       ))}
     </section>
   );
@@ -260,7 +260,23 @@ export function App() {
 
 ##
 
-TODO:
+Effects let you run some code after rendering so that you can synchronize your component with some system outside of React like an API request. Effect can be initiated by rendering or user event. React provides `useEffect` hook for side effects. Common examples for side effects are timers, accessing local storage, API request etc.
+
+```js
+import { useState, useEffect } from "react";
+import { createConnection } from "./chat.js";
+
+export function ChatRoom() {
+  useEffect(() => {
+    const connection = createConnection();
+    connection.connect();
+
+    return () => connection.disconnect();
+  }, []);
+
+  return <h1>Welcome to the chat!</h1>;
+}
+```
 
 ---
 
@@ -268,7 +284,21 @@ TODO:
 
 ##
 
-TODO:
+Components: [@mui/material](https://mui.com/), [@mantine/core](https://mantine.dev/)
+
+Forms: [react-hook-form](https://www.react-hook-form.com/)
+
+Routing: [react-router](https://reactrouter.com/en/main), [@tanstack/router](https://tanstack.com/router/v1)
+
+Data Fetching: [react-query](https://tanstack.com/query/v3/), [swr](https://swr.vercel.app/)
+
+State Management: [zustand](https://docs.pmnd.rs/zustand/getting-started/introduction), [recoil](https://recoiljs.org/)
+
+Animation: [react-spring](https://www.react-spring.dev/), [framer-motion](https://www.framer.com/motion/)
+
+3D/Games: [@react-three/fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
+
+Mobile Apps: [react-native](https://reactnative.dev/), [expo](https://expo.dev/)
 
 <!-- prettier-ignore-start -->
 
