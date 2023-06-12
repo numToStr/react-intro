@@ -43,7 +43,7 @@ React is a _library_ for making beautiful and interactive UI.
 
 ##
 
-It is **not a framework**, because it doesn't have an opinion on how you should handle your API, forms, routing etc,. However, it does give you the building block to do so, which enables everyone to have their own thoughts and solve those issue however they see fit.
+It is **not a framework**, because it doesn't have an opinion on how you should handle your API, forms, routing, etc. However, it does give you the building block to do so, which enables everyone to have their thoughts and solve those issues however they see fit.
 
 ---
 
@@ -51,7 +51,7 @@ It is **not a framework**, because it doesn't have an opinion on how you should 
 
 ##
 
-Component is a single unit of UI. These are UI building blocks of the applications. It could be a stateless component or stateful component. You can define a component using a javascript `function`, use it a like a HTML element and add some `import`/`export` to reuse the component.
+Component is a single unit of UI. These are the UI building blocks of the applications. It could be a stateless component or a stateful component. You can define a component using a javascript `function`, use it a like an HTML element, and add some `import`/`export` to reuse the component.
 
 # What is JSX?
 
@@ -59,7 +59,7 @@ Component is a single unit of UI. These are UI building blocks of the applicatio
 
 JSX is the syntax, used by React, to describe the structure/layout of the component. It looks like HTML but it is different in many ways. _In fact, it's all javascript till the end_.
 
-Following is a simple example of valid React component where JSX starts from line 4-6.
+Following is a simple example of a valid React component where JSX starts from lines 4-6.
 
 ```js
 // file://src/component/example.jsx
@@ -78,7 +78,7 @@ export function Example() {
 
 ##
 
-React compnents uses `props` to communicate and pass data from parent to child component. Props are defined as you would define normal HTML attribute, they can take string literals or any javascript value using curly braces `{ }`.
+React component uses `props` to communicate and pass data from parent to child component. Props are defined as you would define normal HTML attributes, they can take string literals or any javascript value using curly braces `{ }`.
 
 When you nest content inside a JSX tag, the parent component will receive that content in a prop called `children` and `Fragment` (`<>...</>`) lets you group elements without a wrapper node.
 
@@ -88,7 +88,7 @@ function Parent() {
   return (
     <main>
       <Child name="John Doe" age={age}>
-        Anything between tags is know as `children`
+        Anything between tags is known as `children`
       </Child>
     </main>
   );
@@ -142,7 +142,7 @@ function TodoItem3(props) {
 
 To render a similar component with different datasets, we use [javascript array methods](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array#) and most often `map()` method. We also need to give `key` prop to make each element unique in the list.
 
-And to add event to your component, you first define a function and pass the function reference to the `onClick` props on the JSX element.
+And to add an event to your component, you first define a function and pass the function reference to the `onClick` props on the JSX element.
 
 ```js {all} {maxHeight: '280px'}
 const todos = [
@@ -184,7 +184,7 @@ function TodoItem(props) {
 
 ##
 
-Components often need state to store or change something on the UI. State can also be described as component-specific memory. And to do all that React provides [`useState`](https://react.dev/reference/react/useState) hook.
+Components often need a state to store or change something on the UI. State can also be described as component-specific memory. And to do all that React provides [`useState`](https://react.dev/reference/react/useState) hook.
 
 ```js
 import { useState } from "react";
@@ -212,7 +212,7 @@ export function Counter() {
 
 ##
 
-Passing props can become inconvenient if many components need the same information e.g., global theme. Context lets the parent component make some information available to any of its child component.
+Passing props can become inconvenient if many components need the same information e.g., global theme. Context lets the parent component make some information available to any of its child components.
 
 ```js {all} {maxHeight:'340px'}
 // file://src/theme.jsx
@@ -260,7 +260,7 @@ export function App() {
 
 ##
 
-Effects let you run some code after rendering so that you can synchronize your component with some system outside of React like an API request. Effect can be initiated by rendering or user event. React provides `useEffect` hook for side effects. Common examples for side effects are timers, accessing local storage, API request etc.
+Effects let you run some code after rendering so that you can synchronize your component with some system outside of React like an API request. Effect can be initiated by rendering or user event. React provides `useEffect` hook for side effects. Common examples of side effects are timers, accessing local storage, API request, etc.
 
 ```js
 import { useState, useEffect } from "react";
